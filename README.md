@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Sentiment-Analysis-on-Product-Reviews
 
-![Description](https://habrastorage.org/webt/t6/sr/jr/t6srjrmjjmm6qn8gpld9emy4txu.gif)
-=======
 # 📊 Sentiment Analyse Dashboard für Produktbewertungen
 
 Ein interaktives Web-Dashboard zur automatisierten Analyse von Kundenbewertungen mit Sentiment-Erkennung, Visualisierung und Chatbot-Unterstützung.
