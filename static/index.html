@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <div id="intro-gif">
+        <img src="/images/intro.gif" alt="Loading...">
+    </div>
+<div style="text-align: center; margin-top: 0; padding-top: 0;">
+        <img src="/images/okk.png" style="margin-top: 0; padding-top: 0;" />
+    </div>
+
+    <div class="container">
+     
+        <div class="product-info">
+            <h2>Product Details</h2>
+            <p>Product Name: <span id="productName">-</span></p>
+            <p>Brand Name: <span id="brandName">-</span></p>
+            <p>Price: <span id="price">-</span></p>
+        </div>
+
+        <div class="drop-zone" id="dropZone">
+  <span class="drop-zone__prompt">Drop CSV file here or click to upload</span>
+  <input type="file" id="csvFile" class="drop-zone__input" accept=".csv" />
+
+</div>
+<div >
+  <button class="btn-blue" onclick="analyze()">Analyze CSV</button></div>
+        
+            
+        <div id="results" style="display: none;">
+            
+            <!-- Sentiment Stars -->
+          
+
+            <!-- Complaint Section -->
+            
+
+            <!-- Charts -->
+            <h1>Analysis Results</h1>
+              <div id="sentimentStars" class="rating-display">
+                <span class="stars-outer">
+                    <span class="stars-inner" style="width: 100%;"></span>
+                </span>
+                <span id="starText">(4.0/5)</span>
+            </div>
+            <div id="salesTrend" class="info-box">
+             <h2>Sales Forecast</h2>
+           <p id="salesTrendMessage">Loading...</p>
+            </div>
+
+            <div class="chart-container">
+                <div><h3>Sentiment Scores</h3><canvas id="sentimentChart"></canvas></div>
+                <div><h3>Review Distribution</h3><canvas id="distributionChart"></canvas></div>
+                <div><h3>Review Counts</h3><canvas id="countChart"></canvas></div>
+            </div>
+
+            <!-- Word Cloud -->
+            <h3>Word Cloud</h3>
+            <div id="wordCloud"></div>
+
+            <!-- Common Phrases -->
+            <h3>Common Phrases</h3>
+            <ul id="phraseList"></ul>
+
+            <!-- Negative Phrases -->
+            
+
+            <!-- PDF Download Button -->
+            <button id="downloadPdfBtn" style="display: block;">Download Product Report (PDF)</button>
+        </div>
+      
+        
+
+    </div>
+    
+    <script src="/js/main.js"></script>
+  <!-- Floating Chatbot Button -->
+<!-- Chatbot Toggle Button -->
+<!-- Floating Chatbot Button -->
+<button id="chat-toggle" onclick="toggleChatbot()">
+  <img src="/images/chat.png" alt="Chatbot" class="chat-icon">
+</button>
+<!-- Chatbox -->
+<div id="chatbox" class="chat-hidden">
+  <div class="chat-header">
+    <span>Assistant</span>
+    <button onclick="toggleChatbot()">✖</button>
+  </div>
+  <div id="chat-log" class="chat-log"></div>
+  <div class="chat-input">
+    <input type="text" id="userQuestion" placeholder="Ask something..." />
+    <button onclick="askBot()">Send</button>
+  </div>
+</div>
+
+
+
+</body>
+</html>
